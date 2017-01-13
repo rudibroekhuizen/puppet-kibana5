@@ -11,3 +11,5 @@ kibana5::repository:
 kibana5::package_name: kibana
 kibana5::package_version: latest
 kibana5::service_name: kibana
+kibana5::config:
+  server.host: '0.0.0.0'
