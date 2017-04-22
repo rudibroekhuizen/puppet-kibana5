@@ -45,6 +45,7 @@
 class kibana5 (
   Enum['present', 'absent'] $ensure,
   Boolean $manage_repo,
+  Boolean $authentication,
   Struct[{
     location => String,
     key      => Struct[{
@@ -64,4 +65,8 @@ class kibana5 (
   class { '::kibana5::install': } ->
   class { '::kibana5::config': } ->
   class { '::kibana5::service': }
+
+  if $authentication {
+    class { '::kibana5::proxy': }
+  }
 }
