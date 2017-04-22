@@ -58,6 +58,7 @@ class kibana5 (
   String $package_version,
   String $service_name,
   Hash $config = {},
+  String $kibana_password,
 ) {
   class { '::kibana5::repo': } ->
   class { '::kibana5::install': } ->
